@@ -1,29 +1,6 @@
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"ItemList",
-	"itemListElement":
-    [
-    	{% assign count = 1 %}
-    	{% for product in collection.products %}
-        {            
-			  "@type":"ListItem",
-			  "position":{% increment count%},
-			  "url":"{{ product.url | within: collection }}"		
-        {% if forloop.last %}
-        }
-        {% else %}
-        },
-        {% endif %}
-        {% endfor %}
-		
-    ]
-}
-</script>
 <div class="powr-banner-slider" id="4b798d20_1572602918"></div> {% comment %}
   The contents of the collection.liquid template can be found in /sections/collection-template.liquid
 {% endcomment %}
-
 Tag Filter:
 <ul class="subnav clearfix">
  <li{% unless current_tags %} class="active"{% endunless %}>
